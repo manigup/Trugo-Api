@@ -2,7 +2,7 @@
 function Get($tours)
 {
     if (isset($_REQUEST["filters"])) {
-        $tour = $tours->getTours($_REQUEST["filters"], $_REQUEST["key"]);
+        $tour = $tours->getTours($_REQUEST["filters"], isset($_REQUEST["key"]) ? $_REQUEST["key"] : "");
         $tour_arr = array();
         $tour_arr["results"] = array();
         while ($row = $tour->fetch_assoc()) {

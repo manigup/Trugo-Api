@@ -572,14 +572,14 @@ class Tours
         }
         if (strlen($destination) > 0) {
             if (strpos($where, 'WHERE')) {
-                $where .= " OR destination = '" . $destination .  "'";
+                $where .= " and destination = '" . $destination .  "'";
             } else {
                 $where .= " WHERE destination = '" . $destination .  "'";
             }
         }
         if (strlen($date) > 0) {
             if (strpos($where, 'WHERE')) {
-                $where .= " OR departure_date = '" . $date .  "'";
+                $where .= " and departure_date = '" . $date .  "'";
             } else {
                 $where .= " WHERE departure_date = '" . $date .  "'";
             }
@@ -593,21 +593,21 @@ class Tours
         }
         if (strlen($endcity) > 0) {
             if (strpos($where, 'WHERE')) {
-                $where .= " OR end_city = '" . $endcity .  "'";
+                $where .= " and end_city = '" . $endcity .  "'";
             } else {
                 $where .= " WHERE end_city = '" . $endcity .  "'";
             }
         }
-        if (strlen($tour_duration) > 0) {
+        if ($tour_duration > 0) {
             if (strpos($where, 'WHERE')) {
-                $where .= " OR duration BETWEEN 0 AND " . $tour_duration .  "";
+                $where .= " and duration BETWEEN 0 AND " . $tour_duration .  "";
             } else {
                 $where .= " WHERE duration BETWEEN 0 AND " . $tour_duration .  "";
             }
         }
-        if (strlen($budget) > 0) {
+        if ($budget > 0) {
             if (strpos($where, 'WHERE')) {
-                $where .= " OR budget_per_day BETWEEN 0 AND " . $budget .  "";
+                $where .= " and budget_per_day BETWEEN 0 AND " . $budget .  "";
             } else {
                 $where .= " WHERE budget_per_day BETWEEN 0 AND " . $budget .  "";
             }

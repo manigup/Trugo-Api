@@ -69,6 +69,9 @@ if (($_SERVER["HTTP_HOST"]) !== "localhost") {
         case 'enquiry':
             Request("enquiry");
             break;
+        case 'checkout':
+            Request("checkout");
+            break;
         default:
             require_once __DIR__ . '/response/404.php';
             break;

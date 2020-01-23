@@ -40,10 +40,10 @@ function Post($tours)
 function Usermsg($data)
 {
     $msg = "Dear " . $data->person . ",";
-    $msg .= "<h4 style='margin-top:2px;'>Thanks for contacting us</h4>";
-    $msg .= "<p style='margin-top:2px;'>One of our team member get back to you shortly</p>";
-    $msg .= "<h4 style='margin-top:3px;'>Regards</h4>";
-    $msg .= "<p style='margin-top:2x;'>Trugo - Luxury Travels</p>";
+    $msg .= "<b>Thanks for contacting us</b>";
+    $msg .= "<p>One of our team member get back to you shortly</p>";
+    $msg .= "<h4>Regards</h4>";
+    $msg .= "<p>Trugo - Luxury Travels</p>";
     return $msg;
 }
 
@@ -51,13 +51,13 @@ function Adminmsg($data)
 {
     $date = date("Y/m/d") . " , " . date("h:i:sa");
     $msg = "<p><b>Date/Time :</b> $date</p>";
-    $msg = "<p><b>Person name :</b> $data->person</p>";
+    $msg .= "<p><b>Person name :</b> $data->person</p>";
     $msg .= "<p><b>Email :</b> $data->email</p>";
     $msg .= "<p><b>Destination :</b> $data->destination</p>";
     $msg .= "<p><b>Duration :</b> $data->duration</p>";
     $msg .= "<p><b>Members :</b> $data->members</p>";
     $msg .= "<p><b>Details :</b> $data->details</p>";
-    $msg .= "<h4 style='margin-top:3px;'>Regards</h4>";
-    $msg .= "<p style='margin-top:2x;'>Trugo - Luxury Travels</p>";
+    $msg .= "<h4>Regards</h4>";
+    $msg .= "<p>Trugo - Luxury Travels</p>";
     return $msg;
 }
